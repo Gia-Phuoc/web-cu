@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập Admin - Sellphone</title>
+    
+    <link rel="stylesheet" href="../css/admin-login.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Inika:wght@400;700&family=Khula:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="login-container">
+        
+        <header class="admin-header-logo">
+            <img src="https://static.codia.ai/image/2025-10-22/cRGWCkW0gR.png" alt="Logo" class="logo-image">
+            <h1 class="logo-text">ELLPHONE</h1>
+            <span class="admin-title">ADMIN DASHBOARD</span>
+        </header>
+
+        <div class="login-box">
+            <h2>Đăng nhập Quản trị</h2>
+            <form id="admin-login-form">
+                
+                <div class="form-group">
+                    <label for="username">Tên đăng nhập</label>
+                    <input type="text" id="username" class="form-input" placeholder="Nhập tên đăng nhập (admin)" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" class="form-input" placeholder="Nhập mật khẩu (admin)" required>
+                        <i class="fa-solid fa-eye" id="togglePassword"></i>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Đăng nhập</button>
+            </form>
+        </div>
+        
+        <p class="back-to-site-link">
+            <a href="../index.html">← Quay lại trang chủ Sellphone</a>
+        </p>
+    </div>
+    <script src="../javascript/admin-login.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,441 @@
+/* ===== CÀI ĐẶT CHUNG & FONT ===== */
+:root {
+  --font-body: "Khula", sans-serif;
+  --font-title: "Inika", serif;
+  --font-logo: "Jaro", cursive;
+  --color-primary-dark: #b71c1c; /* Đỏ sẫm cho header/footer */
+  --color-primary: #e02626; /* Đỏ tươi cho active/buttons */
+  --color-dark-grey: #232323; /* Màu sidebar */
+  --color-light-grey: #f4f7f6; /* Màu nền content */
+  --color-text-dark: #333;
+  --color-text-light: #f1f1f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-light-grey);
+  color: var(--color-text-dark);
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h2 {
+  font-family: var(--font-title);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-family: var(--font-title);
+  font-size: 22px;
+}
+
+h4 {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+th {
+  background-color: #f9f9f9;
+  font-family: var(--font-title);
+  font-weight: 700;
+}
+
+/* ===== CÁC NÚT BẤM (BUTTONS) ===== */
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* ===== BỐ CỤC CHÍNH (CSS GRID) ===== */
+.admin-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr; /* Sidebar 260px, Content fill */
+  grid-template-rows: 60px 50px 1fr auto; /* Header, Subheader, Content, Footer */
+  grid-template-areas:
+    "header header"
+    "subheader subheader"
+    "sidebar content"
+    "footer footer";
+  min-height: 100vh;
+}
+
+/* ===== 1. TOP HEADER ===== */
+.admin-header {
+  grid-area: header;
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.logo-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  
+}
+.logo-text {
+  font-family: var(--font-logo);
+  font-size: 30px;
+  font-weight: 400;
+  color: white;
+}
+.admin-title {
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-title);
+  position: relative;
+}
+.header-action:hover {
+  color: #ffd7d7;
+}
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: var(--color-primary);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* ===== 2. SUB HEADER ===== */
+.admin-subheader {
+  grid-area: subheader;
+  background: white;
+  padding: 0 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+.admin-subheader ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+.admin-subheader a {
+  display: block;
+  padding: 14px 10px;
+  font-family: var(--font-title);
+  font-weight: 700;
+  color: #555;
+  border-bottom: 3px solid transparent;
+}
+.admin-subheader a.active,
+.admin-subheader a:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* ===== 3. SIDEBAR ===== */
+.admin-sidebar {
+  grid-area: sidebar;
+  background-color: var(--color-dark-grey);
+  color: var(--color-text-light);
+  padding: 20px 0;
+}
+.sidebar-nav ul {
+  list-style: none;
+}
+.sidebar-nav li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 25px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  border-left: 4px solid transparent;
+}
+.sidebar-nav li a i {
+  width: 20px; /* Căn lề cho icon */
+  text-align: center;
+}
+.sidebar-nav li.active a,
+.sidebar-nav li a:hover {
+  background-color: var(--color-primary);
+  border-left-color: #ffc107; /* Màu vàng nhỏ để nổi bật */
+}
+
+/* ===== 4. MAIN CONTENT ===== */
+.admin-content {
+  grid-area: content;
+  padding: 30px;
+}
+
+/* Overview Cards */
+.overview-section {
+  margin-bottom: 30px;
+}
+.overview-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.card h4 {
+  color: #555;
+  margin-bottom: 10px;
+}
+.card p {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+.card.warning {
+  border-top: 4px solid var(--color-primary);
+}
+.card.warning p {
+  color: var(--color-primary);
+}
+
+/* Content Box (cho Sản phẩm, Tồn kho...) */
+.content-box {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  overflow: hidden; /* Để bo góc table */
+}
+.box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+.box-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fdfdfd;
+}
+.tabs {
+  display: flex;
+  gap: 5px;
+}
+.tabs .tab {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.tabs .tab.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+.search-bar {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.search-bar input {
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  width: 250px;
+}
+.search-bar input:focus {
+  outline: none;
+}
+.search-bar button {
+  border: none;
+  background: #eee;
+  padding: 0 12px;
+  cursor: pointer;
+}
+.search-bar button:hover {
+  background: #ddd;
+}
+
+/* Table */
+.table-container {
+  padding: 0; /* Table sẽ fit sát box */
+}
+.product-thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #eee;
+}
+.action-link {
+  font-weight: 700;
+  margin-right: 10px;
+}
+.action-link.edit {
+  color: #007bff;
+}
+.action-link.delete {
+  color: #dc3545;
+}
+.action-link.hide {
+  color: #6c757d;
+}
+
+/* Inventory Report Box */
+.filter-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.inventory-report {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+.report-item {
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+.report-item span {
+  display: block;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 5px;
+}
+.report-item strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+.report-item-full {
+  grid-column: 1 / -1; /* Kéo dài hết 4 cột */
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ===== 5. FOOTER ===== */
+.admin-footer {
+  grid-area: footer;
+  background-color: var(--color-primary-dark);
+  color: #e0e0e0;
+  padding: 30px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+.footer-col {
+  font-size: 14px;
+}
+.footer-col h4 {
+  font-family: var(--font-title);
+  color: white;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.footer-col p {
+  line-height: 1.6;
+}
+.footer-col a {
+  display: block;
+  margin-bottom: 8px;
+  color: #e0e0e0;
+}
+.footer-col a:hover {
+  color: white;
+}
+.qr-code {
+  width: 100px;
+  height: 100px;
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+.social-links a {
+  font-size: 20px;
+}

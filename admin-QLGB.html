@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Giá bán - Admin</title>
+    
+    <link rel="stylesheet" href="../css/admin-QLGB.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Inika:wght@400;700&family=Khula:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-layout">
+        
+        <header class="admin-header">
+            <div class="header-logo">
+                <img src="https://static.codia.ai/image/2025-10-22/cRGWCkW0gR.png" alt="Logo" class="logo-image">
+                <h1 class="logo-text">ELLPHONE</h1>
+                <span class="admin-title">ADMIN DASHBOARD</span>
+            </div>
+            <div class="header-user">
+                <span class="user-greeting">Chào, Admin!</span>
+                <a href="#" class="logout-btn">Đăng xuất</a>
+            </div>
+        </header>
+
+        <aside class="admin-sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="admin-Dashboard.html"><i class="fa-solid fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="admin-QLND.html"><i class="fa-solid fa-users"></i> Quản lý Người dùng</a></li>
+                    <li><a href="admin-QLLSP.html"><i class="fa-solid fa-tags"></i> Quản lý Loại sản phẩm</a></li>
+                    <li><a href="admin-QLSP.html"><i class="fa-solid fa-box-archive"></i> Quản lý Sản phẩm</a></li>
+                    <li><a href="admin-QLNH.html"><i class="fa-solid fa-truck-ramp-box"></i> Quản lý Nhập hàng</a></li>
+                    <li class="active"><a href="admin-QLGB.html"><i class="fa-solid fa-dollar-sign"></i> Quản lý Giá bán</a></li>
+                    <li><a href="admin-QLDH.html"><i class="fa-solid fa-file-invoice"></i> Quản lý Đơn hàng</a></li>
+                    <li><a href="admin-QLTK.html"><i class="fa-solid fa-warehouse"></i> Quản lý Tồn kho</a></li>
+                    <li><a href="admin-BK&TK.html"><i class="fa-solid fa-chart-line"></i> Báo cáo & Thống kê</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+            <h2>Quản lý Giá bán & Lợi nhuận</h2>
+
+            <section class="content-box">
+                <div class="box-header">
+                    <h3>Tra cứu sản phẩm</h3>
+                </div>
+                <div class="box-body">
+                    <form class="form-filters">
+                        <div class="filter-group">
+                            <label for="search-name">Tìm theo tên/mã:</label>
+                            <input type="text" id="search-name" placeholder="Nhập tên hoặc mã SP..." class="form-input">
+                        </div>
+                        <div class="filter-group">
+                            <label for="search-category">Lọc theo loại:</label>
+                            <select id="search-category" class="form-input">
+                                <option value="">Tất cả loại sản phẩm</option>
+                                <option value="ip17">iPhone 17 Series</option>
+                                <option value="ip16">iPhone 16 Series</option>
+                                <option value="ipair">iPhone Air</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-secondary"><i class="fa-solid fa-filter"></i> Lọc</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="content-box">
+                <div class="box-header">
+                    <h3>Bảng giá sản phẩm</h3>
+                    <button class="btn btn-primary"><i class="fa-solid fa-save"></i> Cập nhật tất cả</button>
+                </div>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Giá vốn (VNĐ)</th>
+                                <th>Tỉ lệ lợi nhuận (%)</th>
+                                <th>Giá bán (VNĐ)</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>iPhone 17 Pro Max 256GB</td>
+                                <td class="price-readonly">30.000.000</td>
+                                <td>
+                                    <input type="number" class="price-input" value="25">
+                                </td>
+                                <td class="price-readonly">37.500.000</td>
+                                <td>
+                                    <a href="#" class="action-link update">Cập nhật</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>iPhone 17 Pro 512GB</td>
+                                <td class="price-readonly">32.000.000</td>
+                                <td>
+                                    <input type="number" class="price-input" value="29.6">
+                                </td>
+                                <td class="price-readonly">41.490.000</td>
+                                <td>
+                                    <a href="#" class="action-link update">Cập nhật</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>iPhone Air 256GB</td>
+                                <td class="price-readonly">22.000.000</td>
+                                <td>
+                                    <input type="number" class="price-input" value="27.2">
+                                </td>
+                                <td class="price-readonly">27.990.000</td>
+                                <td>
+                                    <a href="#" class="action-link update">Cập nhật</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+    </div> </body>
+</html>

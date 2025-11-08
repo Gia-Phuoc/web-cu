@@ -1,0 +1,170 @@
+.footer-TC-HT {
+    border: 1px solid rgb(201, 201, 201);    
+    width: 1440px;  
+    height: 460px;
+    margin: 0px auto;
+}
+
+.footer_left {
+    width: 50%;
+    height: 100%;
+    float: left;  
+    background: linear-gradient(360deg, #FFFFFF 60.1%, rgba(153, 153, 153, 0.5) 100%);
+}
+
+.outside_email {
+    margin-top: 46px;
+}
+
+.email {
+    display: flex;           
+    align-items: center;   
+}
+
+.email input {
+    width: 297px;
+    height: 70px;
+    margin-left: 31px;
+    background: rgba(199, 173, 173, 1);
+    border: none;;
+    padding: 0px;
+    margin-top: 0%;
+    padding-left: 30px;
+    border-radius: 20px;
+}
+
+.bt-send {
+    width: 60px;
+    height: 70px;
+    background:rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 10px;
+    padding: 0px;
+    margin-left: 15px;
+    cursor: pointer; /* hiển thị bàn tay khi hover */
+}
+
+.bt-send img {
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+.text {
+    display: flex;        /* Cho các section con nằm ngang */
+    gap: 10px;            /* Khoảng cách giữa các section */
+    align-items: flex-start; /* Căn các section con về đầu */
+
+}
+
+.address {
+    width: 200px;
+}
+
+.address.location{
+    margin-left: 31px;
+}
+
+.address h4 {
+    width: 200px;
+    height: 35px;
+    margin: 5px 0px 0px 0px;
+    font-family: Khula;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 24px;
+    color: rgba(42, 32, 154, 1);
+    line-height: 35px;
+}
+
+.address p {
+    width: 120px;
+    height: 43px;
+    margin: 0px 10px 35px 0px;
+    color:rgba(164, 160, 160, 1);
+}
+
+.address.contact {
+    margin-left: 0px;
+}
+
+
+.app {
+    width: 528px;
+    margin-left: 31px;
+}
+
+.text_app {
+    width: 100%;
+    margin-bottom: 15px; 
+    font-family: Khula;
+    font-weight: 700;
+    font-size: 20px;       
+    color: rgba(42, 32, 154, 1);
+    font-style: bold;
+}
+
+.img_app {
+    display: flex;         
+    gap: 20px;             /* khoảng cách giữa QR và store */
+    align-items: flex-start;
+}
+
+.img_app .store {
+    display: flex;
+    flex-direction: column; /* Đặt hình và chữ theo cột */
+    gap: 10px;
+}
+
+
+
+.footer_right {
+    width: 50%;
+    height: 100%;  
+    float: right;  
+    background: linear-gradient(360deg, #FFFFFF 60.1%, rgba(153, 153, 153, 0.5) 100%);
+}
+
+.footer_right li {
+    list-style: none; 
+    margin-bottom: 10px; 
+    font-family: Khula;
+    font-weight: 700;
+    font-size: 22px;   
+    line-height: 40px; 
+
+}
+
+.table_one {
+    width: 50%;
+    float: left;
+}
+
+
+
+.table_one p {
+    margin-left: 31px;
+    margin-top: 46px;
+    margin-bottom: 20px;
+    font-family: Khula;
+    font-weight: 700;
+    font-size: 24px;       
+    color: rgba(42, 32, 154, 1);
+    font-style: bold;
+}
+
+.table_two p {
+    margin-left: 31px;
+    margin-top: 46px;
+    margin-bottom: 20px;
+    font-family: Khula;
+    font-weight: 700;
+    font-size: 24px;       
+    color: rgba(42, 32, 154, 1);
+    font-style: bold;
+}
+
+
+.table_two  {
+    width: 50%;     
+    float: left;
+}

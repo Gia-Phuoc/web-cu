@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo & Thống kê - Admin</title>
+    
+    <link rel="stylesheet" href="../css/admin-BK&TK.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Inika:wght@400;700&family=Khula:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-layout">
+        
+        <header class="admin-header">
+            <div class="header-logo">
+                <img src="https://static.codia.ai/image/2025-10-22/cRGWCkW0gR.png" alt="Logo" class="logo-image">
+                <h1 class="logo-text">ELLPHONE</h1>
+                <span class="admin-title">ADMIN DASHBOARD</span>
+            </div>
+            <div class="header-user">
+                <span class="user-greeting">Chào, Admin!</span>
+                <a href="#" class="logout-btn">Đăng xuất</a>
+            </div>
+        </header>
+
+        <aside class="admin-sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="admin-Dashboard.html"><i class="fa-solid fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="admin-QLND.html"><i class="fa-solid fa-users"></i> Quản lý Người dùng</a></li>
+                    <li><a href="admin-QLLSP.html"><i class="fa-solid fa-tags"></i> Quản lý Loại sản phẩm</a></li>
+                    <li><a href="admin-QLSP.html"><i class="fa-solid fa-box-archive"></i> Quản lý Sản phẩm</a></li>
+                    <li><a href="admin-QLNH.html"><i class="fa-solid fa-truck-ramp-box"></i> Quản lý Nhập hàng</a></li>
+                    <li><a href="admin-QLGB.html"><i class="fa-solid fa-dollar-sign"></i> Quản lý Giá bán</a></li>
+                    <li><a href="admin-QLDH.html"><i class="fa-solid fa-file-invoice"></i> Quản lý Đơn hàng</a></li>
+                    <li><a href="admin-QLTK.html"><i class="fa-solid fa-warehouse"></i> Quản lý Tồn kho</a></li>
+                    <li class="active"><a href="admin-BK&TK.html"><i class="fa-solid fa-chart-line"></i> Báo cáo & Thống kê</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+            <h2>Báo cáo & Thống kê</h2>
+
+            <section class="content-box">
+                <div class="box-header">
+                    <h3>Chọn khoảng thời gian</h3>
+                </div>
+                <div class="box-body">
+                    <form class="form-filters">
+                        <div class="filter-group">
+                            <label for="start-date">Từ ngày:</label>
+                            <input type="date" id="start-date" class="form-input">
+                        </div>
+                        <div class="filter-group">
+                            <label for="end-date">Đến ngày:</label>
+                            <input type="date" id="end-date" class="form-input">
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-eye"></i> Xem báo cáo</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="content-box">
+                <div class="box-header">
+                    <h3>Biểu đồ Doanh thu</h3>
+                </div>
+                <div class="box-body chart-container">
+                    <canvas id="revenueChart"></canvas> 
+                    <p class="chart-placeholder">(Biểu đồ doanh thu theo ngày/tháng sẽ hiển thị ở đây)</p>
+                </div>
+            </section>
+
+             <section class="overview-section">
+                 <div class="overview-cards report-cards"> 
+                    <div class="card">
+                        <h4>Tổng Doanh Thu (Kỳ)</h4>
+                        <p>850.500.000 VNĐ</p>
+                    </div>
+                    <div class="card">
+                        <h4>Tổng Đơn Hàng (Kỳ)</h4>
+                        <p>1.230</p>
+                    </div>
+                    <div class="card">
+                        <h4>Lợi Nhuận Gộp (Ước tính)</h4>
+                        <p>150.800.000 VNĐ</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-box">
+                <div class="box-header">
+                    <h3>Top 5 Sản phẩm Bán chạy (Theo doanh thu)</h3>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Số lượng bán</th>
+                                <th>Tổng doanh thu</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>iPhone 17 Pro Max 256GB</td>
+                                <td>85</td>
+                                <td>3.229.150.000đ</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>iPhone 17 Pro 512GB</td>
+                                <td>60</td>
+                                <td>2.489.400.000đ</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>iPhone 16 128GB</td>
+                                <td>120</td>
+                                <td>2.158.800.000đ</td>
+                            </tr>
+                           <tr>
+                                <td>4</td>
+                                <td>iPhone Air 256GB</td>
+                                <td>45</td>
+                                <td>1.259.550.000đ</td>
+                            </tr>
+                             <tr>
+                                <td>5</td>
+                                <td>iPhone 17 256GB</td>
+                                <td>50</td>
+                                <td>1.249.500.000đ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+    </div> </body>
+</html>

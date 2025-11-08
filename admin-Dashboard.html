@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - ELLPHONE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Inika:wght@400;700&family=Inder&family=Khula:wght@300;400;600;700;800&family=Inclusive+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inconsolata:wght@200;300;400;500;600;700;800&family=ABeeZee:ital,wght@0,400;1,400&family=Imprima&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin-Dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="admin-layout">
+
+        <header class="admin-header">
+            <div class="header-left">
+                <img src="https://static.codia.ai/image/2025-10-22/cRGWCkW0gR.png" alt="Logo" class="logo-image">
+                <h1 class="logo-text">ELLPHONE</h1>
+                <span class="admin-title">ADMIN DASHBOARD</span>
+            </div>
+            <div class="header-right">
+                <a href="#" class="header-action">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Chào, Admin!</span>
+                </a>
+                <a href="#" class="header-action">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-badge">1</span>
+                </a>
+            </div>
+        </header>
+
+        <nav class="admin-subheader">
+            <ul>
+                <li><a href="#" class="active">Trang chủ</a></li>
+                <li><a href="#">Xem trang web</a></li>
+                <li><a href="#">Đăng xuất</a></li>
+            </ul>
+        </nav>
+
+        <aside class="admin-sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="admin1.html"><i class="fa-solid fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="admin-QLND.html"><i class="fa-solid fa-users"></i> Quản lý Người dùng</a></li>
+                    <li><a href="admin-QLLSP.html"><i class="fa-solid fa-tags"></i> Quản lý Loại sản phẩm</a></li>
+                    <li><a href="admin-QLSP.html"><i class="fa-solid fa-box-archive"></i> Quản lý Sản phẩm</a></li>
+                    <li><a href="admin-QLNH.html"><i class="fa-solid fa-truck-ramp-box"></i> Quản lý Nhập hàng</a></li>
+                    <li><a href="admin-QLGB.html"><i class="fa-solid fa-dollar-sign"></i> Quản lý Giá bán</a></li>
+                    <li><a href="admin-QLDH.html"><i class="fa-solid fa-file-invoice"></i> Quản lý Đơn hàng</a></li>
+                    <li><a href="admin-QLTK.html"><i class="fa-solid fa-warehouse"></i> Quản lý Tồn kho</a></li>
+                    <li><a href="admin-BK&TK.html"><i class="fa-solid fa-chart-line"></i> Báo cáo & Thống kê</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+            
+            <section class="overview-section">
+                <h2>Dashboard Overview</h2>
+                <div class="overview-cards">
+                    <div class="card">
+                        <h4>Tổng doanh thu</h4>
+                        <p>1.200.00.000 VNĐ</p>
+                    </div>
+                    <div class="card">
+                        <h4>Tổng đơn hàng</h4>
+                        <p>5.500</p>
+                    </div>
+                    <div class="card warning">
+                        <h4>Sản phẩm sắp hết</h4>
+                        <p>15</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-box">
+                <div class="box-header">
+                    <h3>Danh sách sản phẩm</h3>
+                    <a href="#" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
+                </div>
+                <div class="box-filters">
+                    <div class="tabs">
+                        <button class="tab active">Quản lý sản phẩm</button>
+                        <button class="tab">Đã ẩn</button>
+                    </div>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Tìm theo tên, mã sản phẩm...">
+                        <button><i class="fa-solid fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Mã SP</th>
+                                <th>Hình ảnh</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Loại</th>
+                                <th>Giá vốn</th>
+                                <th>% Lợi nhuận</th>
+                                <th>Giá bán</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>IP17PM-256</td>
+                                <td><img src="https://static.codia.ai/image/2025-10-22/TizvhzeZiP.png" alt="iPhone 17" class="product-thumb"></td>
+                                <td>iPhone 17 Pro Max 256GB</td>
+                                <td>iPhone 17</td>
+                                <td>30.000.000đ</td>
+                                <td>25%</td>
+                                <td>37.990.000đ</td>
+                                <td>
+                                    <a href="#" class="action-link edit">Sửa</a>
+                                    <a href="#" class="action-link delete">Xoá</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>IP17-256</td>
+                                <td><img src="https://static.codia.ai/image/2025-10-22/sRkzSbtmvt.png" alt="iPhone 17" class="product-thumb"></td>
+                                <td>iPhone 17 256GB</td>
+                                <td>iPhone 17</td>
+                                <td>19.500.000đ</td>
+                                <td>28%</td>
+                                <td>24.990.000đ</td>
+                                <td>
+                                    <a href="#" class="action-link edit">Sửa</a>
+                                    <a href="#" class="action-link hide">Ẩn</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="content-box">
+                <div class="box-header">
+                    <h3>Tra cứu Tồn kho</h3>
+                </div>
+                <div class="box-filters">
+                    <input type="text" class="filter-input" placeholder="Mã SP">
+                    <input type="text" class="filter-input" placeholder="Loại sản phẩm">
+                    <button class="btn btn-secondary"><i class="fa-solid fa-search"></i> Tra cứu</button>
+                </div>
+                <div class="inventory-report">
+                    <div class="report-item">
+                        <span>Mã SP</span>
+                        <strong>IP17PM-256</strong>
+                    </div>
+                    <div class="report-item">
+                        <span>Tên SP</span>
+                        <strong>iPhone 17 Pro Max 256GB</strong>
+                    </div>
+                    <div class="report-item">
+                        <span>Loại</span>
+                        <strong>iPhone 17</strong>
+                    </div>
+                    <div class="report-item">
+                        <span>Số lượng tồn</span>
+                        <strong>150</strong>
+                    </div>
+                    <div class="report-item-full">
+                        <a href="#" class="btn btn-primary">Tra cứu chi tiết Nhập-Xuất-Tồn</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="admin-footer">
+            <div class="footer-col">
+                <img src="https://static.codia.ai/image/2025-10-22/OTHkdKnz2S.png" alt="QR Code" class="qr-code">
+            </div>
+            <div class="footer-col">
+                <h4>Địa chỉ</h4>
+                <p>SELLPHONE<br>Tòa nhà abc, Quận xyz</p>
+            </div>
+            <div class="footer-col">
+                <h4>Thông tin & Chính sách</h4>
+                <a href="#">Chính sách bảo hành</a>
+                <a href="#">Chính sách đổi trả</a>
+            </div>
+            <div class="footer-col">
+                <h4>Hỗ trợ & Tra cứu</h4>
+                <a href="#">Trung tâm bảo hành</a>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </footer>
+
+    </div> </body>
+</html>

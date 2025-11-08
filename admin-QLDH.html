@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - ELLPHONE</title>
+    <link rel="stylesheet" href="../css/admin-QLDH.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Inika:wght@400;700&family=Khula:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-layout">
+        
+        <header class="admin-header">
+            <div class="header-logo">
+                <img src="https://static.codia.ai/image/2025-10-22/cRGWCkW0gR.png" alt="Logo" class="logo-image">
+                <h1 class="logo-text">ELLPHONE</h1>
+                <span class="admin-title">ADMIN DASHBOARD</span>
+            </div>
+            <div class="header-user">
+                <span class="user-greeting">Chào, Admin!</span>
+                <a href="#" class="logout-btn">Đăng xuất</a>
+            </div>
+        </header>
+
+        <aside class="admin-sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="admin-Dashboard.html"><i class="fa-solid fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="admin-QLND.html"><i class="fa-solid fa-users"></i> Quản lý Người dùng</a></li>
+                    <li><a href="admin-QLLSP.html"><i class="fa-solid fa-tags"></i> Quản lý Loại sản phẩm</a></li>
+                    <li><a href="admin-QLSP.html"><i class="fa-solid fa-box-archive"></i> Quản lý Sản phẩm</a></li>
+                    <li><a href="admin-QLNH.html"><i class="fa-solid fa-truck-ramp-box"></i> Quản lý Nhập hàng</a></li>
+                    <li><a href="admin-QLGB.html"><i class="fa-solid fa-dollar-sign"></i> Quản lý Giá bán</a></li>
+                    <li class="active"><a href="admin-QLDH.html"><i class="fa-solid fa-file-invoice"></i> Quản lý Đơn hàng</a></li>
+                    <li><a href="admin-QLTK.html"><i class="fa-solid fa-warehouse"></i> Quản lý Tồn kho</a></li>
+                    <li><a href="admin-BK&TK.html"><i class="fa-solid fa-chart-line"></i> Báo cáo & Thống kê</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+            <h2>Dashboard Overview</h2>
+
+            <section class="overview-cards">
+                <div class="card">
+                    <h4>Tổng doanh thu</h4>
+                    <p>1.200.000.000đ</p>
+                </div>
+                <div class="card">
+                    <h4>Tổng đơn hàng</h4>
+                    <p>5.500</p>
+                </div>
+                <div class="card warning">
+                    <h4>Sản phẩm sắp hết</h4>
+                    <p>15</p>
+                </div>
+            </section>
+
+            <section class="data-table">
+                <h3>Đơn hàng mới nhất</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mã ĐH</th>
+                            <th>Khách hàng</th>
+                            <th>Ngày đặt</th>
+                            <th>Tổng tiền</th>
+                            <th>Tình trạng</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1123</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>22/10/2025</td>
+                            <td>37.990.000đ</td>
+                            <td><span class="status new">Mới đặt</span></td>
+                            <td><button class="btn-detail">Xem chi tiết</button></td>
+                        </tr>
+                        <tr>
+                            <td>#1122</td>
+                            <td>Trần Thị B</td>
+                            <td>21/10/2025</td>
+                            <td>24.990.000đ</td>
+                            <td><span class="status processed">Đã xử lý</span></td>
+                            <td><button class="btn-detail">Xem chi tiết</button></td>
+                        </tr>
+                        <tr>
+                            <td>#1121</td>
+                            <td>Lê Văn C</td>
+                            <td>20/10/2025</td>
+                            <td>41.490.000đ</td>
+                            <td><span class="status shipped">Đã giao</span></td>
+                            <td><button class="btn-detail">Xem chi tiết</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

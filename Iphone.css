@@ -1,0 +1,762 @@
+/* Thiết lập cơ bản */
+body {
+    margin: 0;
+    /* Dùng font sans-serif cho giống ảnh */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    width: 1440px;
+    height: 140px;
+    background-color: #d9232a; /* Màu đỏ chuẩn */
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* * Dùng Grid để chia 3 cột (Trái - Giữa - Phải)
+ * align-items: center; sẽ căn giữa 3 khối này theo chiều dọc
+*/
+.div1 {
+    width: 100%;
+    max-width: 1440px; /* Giới hạn chiều rộng tối đa */
+    height: 100%;
+    
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; 
+    align-items: center; /* Căn giữa các khối theo chiều dọc */
+    padding: 0 50px; 
+    box-sizing: border-box;
+}
+
+/* KHỐI 1: LOGO */
+.logo {
+    width: 305px; 
+    height: 80px;
+    margin-left: 120px;
+}
+.logo img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: contain;  */
+}
+
+/* KHỐI 2: TÌM KIẾM VÀ LINKS */
+
+/* * THAY ĐỔI CHÍNH:
+ * .search-container giờ là 'relative'
+ * Nó sẽ được căn giữa bởi Grid
+*/
+.search-container {
+    position: relative;
+    /* Căn giữa chính nó (và nội dung) trong cột grid */
+    justify-self: center; 
+}
+
+.khung_tim_kiem {
+    width: 570px; 
+    height: 44px;
+    position: relative;
+    border-radius: 30px;
+    background-color: white; 
+}
+
+.khung_tim_kiem input {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    font-family: Arial, Helvetica, sans-serif; /* Giống font chung */
+    font-size: 15px;
+    padding-left: 20px;
+    padding-right: 45px; 
+    box-sizing: border-box;
+    border: none; 
+    background-color: transparent; 
+}
+
+.khung_tim_kiem input::placeholder {
+    color: #888;
+}
+
+.search-icon {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 6px;
+    right: 10px; 
+    cursor: pointer; 
+}
+
+
+.the {
+    position: absolute;
+    bottom: -25px; /* Đẩy xuống dưới 25px (tính từ mép .search-container) */
+    left: 0;
+    width: 100%; /* Rộng bằng .search-container */
+}
+
+.the ul {
+    display: flex;
+    margin-left: 465px;
+    gap: 20px; 
+    list-style: none; 
+    margin: 0;
+}
+
+.the li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500; /* Hơi đậm 1 chút cho giống ảnh */
+}
+.the li a:hover {
+    text-decoration: underline;
+}
+
+/* KHỐI 3: TÀI KHOẢN VÀ GIỎ HÀNG */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+    justify-content: center;
+}
+
+.tai_khoan {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.tai_khoan img {
+    width: 44px;  
+    height: 44px; 
+}
+
+.gio_hang {
+    height: 44px;
+    border: none; 
+    background-color: white;
+    border-radius: 20px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    padding: 0 20px; 
+    color: black;
+    font-weight: bold; 
+    text-decoration: none; 
+    font-size: 15px;
+}
+
+.gio_hang img {
+    width: 105px;  
+    height: 24px; 
+}
+
+
+
+
+/* Tổng thể */
+#product {
+  text-align: center;
+  width: 100%;
+  width: 100%;
+  display: block;
+  justify-content: center;
+}
+
+.pro-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  width: 100%;
+  max-width: 1200px;     /* Giới hạn tổng chiều ngang */
+  margin: 0 auto; 
+}
+
+/* Card sản phẩm */
+.pro {
+    flex: 1 1 calc(20% - 20px);          /* Kích thước cơ bản mỗi thẻ */
+    max-width: 220px;         /* Không vượt quá 220px */
+    min-width: 200px;         /* Đảm bảo không co quá nhỏ */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    padding: 10px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Nhãn giảm giá và trả góp */
+.discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.installment {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #d9f0ff;
+  color: #0066cc;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+/* Ảnh */
+.pro img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+/* Tên và giá */
+.pro-name {
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+.price {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Thông tin nhỏ */
+.info span {
+  display: inline-block;
+  font-size: 12px;
+  background: #f2f2f2;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-right: 5px;
+}
+
+/* Ưu đãi */
+.promotion {
+  background: #eef6ff;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #333;
+  margin-top: 8px;
+}
+
+/* Đáy thẻ */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.rating {
+  font-size: 14px;
+  color: gold;
+}
+
+.favorite {
+  color: rgb(36, 186, 255);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.favorite:hover {
+  text-decoration: underline;
+}
+.see-more {
+    text-align: center;
+    margin: 30px 0;
+}
+
+#seeMoreBtn {
+    background-color: #e5f4ff; /* nền xanh nhạt */
+    color: #007bff; /* chữ xanh dương */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#seeMoreBtn:hover {
+    background-color: #cde9ff;
+}
+.hidden {
+  display: none;
+}
+@media (max-width: 1024px) {
+    .pro {
+        flex: 1 1 calc(33.3% - 20px); /* 3 sản phẩm mỗi hàng */
+        max-width: calc(33.3% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .pro {
+        flex: 1 1 calc(50% - 20px); /* 2 sản phẩm mỗi hàng */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .pro {
+        flex: 1 1 100%; /* 1 sản phẩm mỗi hàng */
+        max-width: 100%;
+    }
+}
+.filter-bar {
+  margin: 30px auto;
+  max-width: 1200px;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Times New Roman', Times, serif;
+}
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.filter-btn {
+  border: 1px solid #ccc;
+  background-color: #D9D9D9;
+  color: #333;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.filter-btn:hover {
+  background-color: #e9e9e9;
+}
+
+.filter-btn.active {
+  border-color: #d70018;
+  background-color: #fff0f2;
+  color: #d70018;
+  font-weight: 600;
+}
+
+
+/* footer */
+.footer-TC-HT {
+    border: 1px solid rgb(201, 201, 201);    
+    width: 1440px;  
+    height: 460px;
+    margin: 0px auto;
+}
+
+.footer_left {
+    width: 50%;
+    height: 100%;
+    float: left;  
+    background: linear-gradient(360deg, #FFFFFF 60.1%, rgba(153, 153, 153, 0.5) 100%);
+}
+
+.outside_email {
+    margin-top: 46px;
+}
+
+.email {
+    display: flex;           
+    align-items: center;   
+}
+
+.email input {
+    width: 297px;
+    height: 70px;
+    margin-left: 31px;
+    background: rgba(199, 173, 173, 1);
+    border: none;;
+    padding: 0px;
+    margin-top: 0%;
+    padding-left: 30px;
+    border-radius: 20px;
+}
+
+.bt-send {
+    width: 60px;
+    height: 70px;
+    background:rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 10px;
+    padding: 0px;
+    margin-left: 15px;
+    cursor: pointer; /* hiển thị bàn tay khi hover */
+}
+
+.bt-send img {
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+.text {
+    display: flex;        /* Cho các section con nằm ngang */
+    gap: 10px;            /* Khoảng cách giữa các section */
+    align-items: flex-start; /* Căn các section con về đầu */
+
+}
+
+.address {
+    width: 200px;
+}
+
+.address.location{
+    margin-left: 31px;
+}
+
+.address h4 {
+    width: 200px;
+    height: 35px;
+    margin: 5px 0px 0px 0px;
+    font-family: Khula;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 24px;
+    color: rgba(42, 32, 154, 1);
+    line-height: 35px;
+}
+
+.address p {
+    width: 120px;
+    height: 43px;
+    margin: 0px 10px 35px 0px;
+    color:rgba(164, 160, 160, 1);
+}
+
+.address.contact {
+    margin-left: 0px;
+}
+
+
+.app {
+    width: 528px;
+    margin-left: 31px;
+}
+
+.text_app {
+    width: 100%;
+    margin-bottom: 15px; 
+    font-family: Khula;
+    font-weight: 700;
+    font-size: 20px;       
+    color: rgba(42, 32, 154, 1);
+    font-style: bold;
+}
+
+.img_app {
+    display: flex;         
+    gap: 20px;             /* khoảng cách giữa QR và store */
+    align-items: flex-start;
+}
+
+.img_app .store {
+    display: flex;
+    flex-direction: column; /* Đặt hình và chữ theo cột */
+    gap: 10px;
+}
+
+
+
+.footer_right {
+    width: 50%;
+    height: 100%;  
+    float: right;  
+    background: linear-gradient(360deg, #FFFFFF 60.1%, rgba(153, 153, 153, 0.5) 100%);
+}
+
+.footer_right li {
+    list-style: none; 
+    margin-bottom: 10px; 
+    font-family: Khula;
+    font-weight: 700;
+    font-size: 22px;   
+    line-height: 40px; 
+
+}
+
+.table_one {
+    width: 50%;
+    float: left;
+}
+
+
+
+.table_one p {
+    margin-left: 31px;
+    margin-top: 46px;
+    margin-bottom: 20px;
+    font-family: Khula;
+    font-weight: 700;
+    font-size: 24px;       
+    color: rgba(42, 32, 154, 1);
+    font-style: bold;
+}
+
+.table_two p {
+    margin-left: 31px;
+    margin-top: 46px;
+    margin-bottom: 20px;
+    font-family: Khula;
+    font-weight: 700;
+    font-size: 24px;       
+    color: rgba(42, 32, 154, 1);
+    font-style: bold;
+}
+
+
+.table_two  {
+    width: 50%;     
+    float: left;
+}
+
+
+
+/* css comment */
+/* Q&A Section */
+.qa-section {
+  background: #d9d9d9;
+  border-radius: 40px;
+  padding: 40px;
+  margin-bottom: 60px;
+}
+
+.qa-title {
+  font-family: "Inconsolata", monospace;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20.98px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.qa-intro {
+  display: flex;
+  gap: 20px;
+  background: #fff8f8;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.qa-image {
+  width: 160px;
+  height: 172px;
+  flex-shrink: 0;
+}
+
+.qa-text h4 {
+  font-family: "Inconsolata", monospace;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 23.08px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.qa-text p {
+  font-family: "Inconsolata", monospace;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20.98px;
+  color: #8e8282;
+}
+
+.qa-form {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.qa-input {
+  flex: 1;
+  height: 50px;
+  background: #fff8f8;
+  border: 1px solid #baabab;
+  border-radius: 10px;
+  padding: 0 16px;
+  font-family: "Inconsolata", monospace;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.16px;
+  color: #8e8282;
+}
+
+.qa-submit {
+  background: #ff0000;
+  border: none;
+  border-radius: 10px;
+  padding: 0 20px;
+  color: #ffffff;
+  font-family: "Inconsolata", monospace;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qa-submit img {
+  width: 40px;
+  height: 40px;
+}
+
+.qa-comments {
+  background: #fff8f8;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.comment {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #d0c8c8;
+}
+
+.comment:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #666;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inconsolata", monospace;
+  font-weight: 800;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-author {
+  font-family: "Inconsolata", monospace;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 20.98px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.comment-text {
+  font-family: "Inconsolata", monospace;
+  font-size: 18px;
+  line-height: 18.88px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.reply-btn {
+  background: none;
+  border: none;
+  font-family: "Inconsolata", monospace;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14.69px;
+  color: #ff0000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.reply-btn::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: url("https://static.codia.ai/image/2025-10-22/n2dMNVzRJR.png")
+    no-repeat center;
+  background-size: contain;
+}
+
+.admin-reply {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(200, 226, 255, 0.3);
+  border-radius: 10px;
+  position: relative;
+}
+
+.admin-badge {
+  background: #ff0000;
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-family: "Inconsolata", monospace;
+  font-weight: 800;
+  font-size: 15px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.admin-name {
+  font-family: "Inconsolata", monospace;
+  font-weight: 800;
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.admin-text {
+  font-family: "Inconsolata", monospace;
+  font-size: 18px;
+  line-height: 18.88px;
+  color: #000000;
+}
+
+.view-more-comments {
+  background: #d9d9d9;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-family: "Imprima", sans-serif;
+  font-size: 14px;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto 0;
+}
+
+.view-more-comments img {
+  width: 10px;
+  height: 22px;
+}

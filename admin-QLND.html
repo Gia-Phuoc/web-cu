@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Người dùng - Admin</title>
+    
+    <link rel="stylesheet" href="../css/admin-QLND.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Inika:wght@400;700&family=Khula:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-layout">
+        
+        <header class="admin-header">
+            <div class="header-logo">
+                <img src="https://static.codia.ai/image/2025-10-22/cRGWCkW0gR.png" alt="Logo" class="logo-image">
+                <h1 class="logo-text">ELLPHONE</h1>
+                <span class="admin-title">ADMIN DASHBOARD</span>
+            </div>
+            <div class="header-user">
+                <span class="user-greeting">Chào, Admin!</span>
+                <a href="#" class="logout-btn">Đăng xuất</a>
+            </div>
+        </header>
+
+        <aside class="admin-sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="admin-Dashboard.html"><i class="fa-solid fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li class="active"><a href="admin-QLND.html"><i class="fa-solid fa-users"></i> Quản lý Người dùng</a></li>
+                    <li><a href="admin-QLLSP.html"><i class="fa-solid fa-tags"></i> Quản lý Loại sản phẩm</a></li>
+                    <li><a href="admin-QLSP.html"><i class="fa-solid fa-box-archive"></i> Quản lý Sản phẩm</a></li>
+                    <li><a href="admin-QLNH.html"><i class="fa-solid fa-truck-ramp-box"></i> Quản lý Nhập hàng</a></li>
+                    <li><a href="admin-QLGB.html"><i class="fa-solid fa-dollar-sign"></i> Quản lý Giá bán</a></li>
+                    <li><a href="admin-QLDH.html"><i class="fa-solid fa-file-invoice"></i> Quản lý Đơn hàng</a></li>
+                    <li><a href="admin-QLTK.html"><i class="fa-solid fa-warehouse"></i> Quản lý Tồn kho</a></li>
+                    <li><a href="admin-BK&TK.html"><i class="fa-solid fa-chart-line"></i> Báo cáo & Thống kê</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+            <h2>Quản lý Người dùng</h2>
+
+            <section class="content-box">
+                <div class="box-header">
+                    <h3>Danh sách khách hàng</h3>
+                    </div>
+
+                <div class="box-filters">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Tìm theo tên, email, SĐT...">
+                        <button><i class="fa-solid fa-search"></i></button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tên Khách hàng</th>
+                                <th>Email</th>
+                                <th>Số điện thoại</th>
+                                <th>Trạng thái</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nguyễn Văn A</td>
+                                <td>nguyenvana@gmail.com</td>
+                                <td>0909123456</td>
+                                <td><span class="status active">Hoạt động</span></td>
+                                <td>
+                                    <a href="#" class="action-link reset">Reset Pass</a>
+                                    <a href="#" class="action-link lock">Khoá TK</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+    </div> 
+    <script src="../javascript/admin-QLND.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Khula', sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Layout tổng */
+.user-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.user-header {
+  background: #e02626;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  border-bottom: 1px solid #000;
+}
+
+/* Logo */
+.user-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 8px;
+}
+
+.logo-text {
+  font-family: "Jaro", cursive;
+  font-size: 28px;
+  font-weight: 400;
+
+}
+
+/* Tìm kiếm */
+.timkiem {
+  flex: 1;
+  margin: 0 40px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px 12px;
+  width: 100%;
+  max-width: 400px;
+  height: 35px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.iphone-list {
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+  margin-left: 10px;
+  font-size: 12px;
+  color: black;
+}
+
+/* Hỗ trợ - Giỏ hàng - Username */
+.hotro-giohang-username {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+}
+
+.hotro, .giohang, .username {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: white;
+ 
+}
+
+.hotro img,
+.giohang img,
+.username img {
+  width: 28px;
+  height: 28px;
+}
+.hotro-text{
+  font-size: 13px;
+}
+.giohang-text{
+   font-size: 13px;
+}
+.username-text{
+   font-size: 13px;
+}
+
+/* Giỏ hàng */
+.cart-container {
+  text-align: center;
+  padding: 60px 20px;
+}
+.cart-items {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+}
+.cart-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/*.dieuhuong {
+  margin-bottom: 20px;
+}*/
+.arrow-line {
+  position: relative;
+  height: 1px;
+  background-color: #000; /* màu của đường kẻ */
+  width: 300px;
+  margin:auto;
+}
+
+
+
+.nav-back {
+  text-decoration: none;
+  color: #e02626;
+  font-size: 16px;
+}
+
+.arrow {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+
+
+/* Thông báo trống */
+.cart-container p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Nút quay lại */
+.btn-home {
+  display: inline-block;
+  margin-top: 300px;
+  padding: 10px 20px;
+  background-color: #e02626;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .user-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .user-logo {
+    margin-bottom: 10px;
+  }
+
+  .timkiem {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .search-box {
+    max-width: 100%;
+  }
+
+  .hotro-giohang-username {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .iphone-list {
+    flex-wrap: wrap;
+    font-size: 11px;
+    gap: 10px;
+  }
+
+  .cart-container h2 {
+    font-size: 22px;
+  }
+
+  .cart-container p {
+    font-size: 14px;
+  }
+
+  .btn-home {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 22px;
+  }
+
+  .search-input {
+    font-size: 13px;
+  }
+
+  .search-btn {
+    font-size: 16px;
+  }
+
+  .hotro-text,
+  .giohang-text,
+  .username-text {
+    font-size: 12px;
+  }
+
+  .arrow-line {
+    width: 200px;
+  }
+
+ 
+}
+

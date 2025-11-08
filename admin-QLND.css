@@ -1,0 +1,260 @@
+/* ===== CÀI ĐẶT CHUNG & FONT ===== */
+:root {
+  --font-body: "Khula", sans-serif;
+  --font-title: "Inika", serif;
+  --font-logo: "Jaro", cursive;
+  --color-primary-dark: #b71c1c;
+  --color-primary: #e02626;
+  --color-dark-grey: #232323;
+  --color-light-grey: #f4f7f6;
+  --color-text-dark: #333;
+  --color-text-light: #f1f1f1;
+  --color-green: #2ecc71;
+  --color-blue: #3498db;
+  --color-grey: #7f8c8d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-light-grey);
+  color: var(--color-text-dark);
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h2 {
+  font-family: var(--font-title);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-family: var(--font-title);
+  font-size: 22px;
+}
+
+h4 {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+th {
+  background-color: #f9f9f9;
+  font-family: var(--font-title);
+  font-weight: 700;
+}
+
+/* ===== BỐ CỤC CHÍNH (Layout từ admin2) ===== */
+.admin-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr; /* Sidebar 260px (giống admin1) */
+  grid-template-rows: 70px 1fr; /* Header 70px, content */
+  grid-template-areas:
+    "header header"
+    "sidebar content";
+  min-height: 100vh;
+}
+
+/* ===== HEADER (Code từ admin2, đã chỉnh sửa) ===== */
+.admin-header {
+  grid-area: header;
+  background: #e02626;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px; /* Giống admin1 cho đồng bộ */
+  border-bottom: 1px solid #000;
+}
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Giống admin1 */
+}
+.header-logo .logo-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.header-logo .logo-text {
+  font-family: "Jaro", cursive;
+  font-size: 32px;
+  font-weight: 400;
+  margin-right: 10px;
+}
+.admin-title {
+  font-family: "Inika", serif;
+  font-size: 14px; /* Giống admin1 */
+  font-weight: 700;
+  border: 1px solid white;
+  padding: 4px 8px; /* Giống admin1 */
+  border-radius: 4px; /* Giống admin1 */
+}
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: "Inika", serif;
+}
+.logout-btn {
+  font-size: 14px;
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+.logout-btn:hover {
+  background: white;
+  color: #e02626;
+}
+
+/* ===== SIDEBAR (Code từ admin1) ===== */
+.admin-sidebar {
+  grid-area: sidebar;
+  background-color: var(--color-dark-grey);
+  color: var(--color-text-light);
+  padding: 20px 0;
+  /* Đảm bảo sidebar cố định khi cuộn nội dung */
+  position: sticky;
+  top: 0;
+  height: 100vh; 
+  overflow-y: auto;
+}
+.sidebar-nav ul {
+  list-style: none;
+}
+.sidebar-nav li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 25px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+.sidebar-nav li a i {
+  width: 20px;
+  text-align: center;
+}
+.sidebar-nav li.active a,
+.sidebar-nav li a:hover {
+  background-color: var(--color-primary);
+  border-left-color: #ffc107; /* Viền vàng */
+}
+
+/* ===== MAIN CONTENT ===== */
+.admin-content {
+  grid-area: content;
+  padding: 30px;
+  overflow-y: auto; /* Cho phép cuộn nội dung */
+}
+
+.content-box {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+.box-filters {
+  padding: 15px 20px;
+  background-color: #fdfdfd;
+}
+.search-bar {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  max-width: 400px; /* Giới hạn chiều rộng ô tìm kiếm */
+}
+.search-bar input {
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  width: 100%;
+}
+.search-bar input:focus {
+  outline: none;
+}
+.search-bar button {
+  border: none;
+  background: #eee;
+  padding: 0 12px;
+  cursor: pointer;
+}
+.search-bar button:hover {
+  background: #ddd;
+}
+.table-container {
+  padding: 0;
+}
+
+/* ===== Styles Cụ Thể cho Trang Người Dùng ===== */
+.status {
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+}
+.status.active {
+  background-color: var(--color-green); /* Xanh lá */
+}
+.status.locked {
+  background-color: var(--color-grey); /* Xám */
+}
+
+.action-link {
+  font-weight: 700;
+  margin-right: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.action-link.reset {
+  color: var(--color-blue); /* Xanh dương */
+}
+.action-link.lock {
+  color: var(--color-primary); /* Đỏ */
+}
+.action-link.unlock {
+  color: var(--color-green); /* Xanh lá */
+}
